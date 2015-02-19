@@ -54,6 +54,11 @@ class AccountViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+    super.touchesBegan(touches, withEvent: event)
+    self.view.endEditing(true)
+    }
+
     @IBAction func makeTransaction(sender: AnyObject) {
         var deposit = (transAmount.text as NSString).doubleValue
         var reason = reasonText.text
@@ -70,5 +75,6 @@ class AccountViewController: UIViewController {
             }
         }
     }
+    
 
 }

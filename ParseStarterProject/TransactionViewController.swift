@@ -20,7 +20,7 @@ class TransactionViewController: UITableViewController, PFLogInViewControllerDel
         var currentUser = PFUser.currentUser()
         if (currentUser != nil) {
             var findTransactionData = PFQuery(className: "transactions")
-            findTransactionData.cachePolicy = kPFCachePolicyNetworkElseCache
+            //findTransactionData.cachePolicy = kPFCachePolicyNetworkElseCache
             let isInCache = findTransactionData.hasCachedResult()
             findTransactionData.clearCachedResult()
             findTransactionData.maxCacheAge = 60 * 60 * 24
@@ -73,7 +73,7 @@ class TransactionViewController: UITableViewController, PFLogInViewControllerDel
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 0
+        return transactionsData.count
     }
 
 

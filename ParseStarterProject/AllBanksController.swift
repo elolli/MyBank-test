@@ -6,9 +6,43 @@
 //  Copyright (c) 2015 Parse. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
 class AllBanksController: UITableViewController {
+    
+    var allBanks:NSMutableArray = NSMutableArray()
+    
+    func loadData() {
+        allBanks.removeAllObjects()
+        var currentUser = PFUser.currentUser()
+        
+        if currentUser != nil {
+            var query = PFQuery(className: "locations")
+            
+            NSLog("%@", "About to call geoPointForCurrentLocation")
+            PFGeoPoint.geoPointForCurrentLocationInBackground() {
+                (point: PFGeoPoint!, error: NSError!) -> Void in
+                
+                NSLog("Got Location")
+                query.whereKey("location", nearGeoPoint: point)
+                query.limit = 10
+                query.findObjectsInBackgroundWithBlock{
+                    (objects:[AnyObject]!, error:NSError!)->Void in
+                    
+                    if error == nil {
+                        for object in objects {
+                            self.allBanks.addObject(object)
+                            
+                            println(object)
+                        }
+                        self.tableView.reloadData()
+                        self.refreshControl?.endRefreshing()
+                    }
+                }
+            }
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

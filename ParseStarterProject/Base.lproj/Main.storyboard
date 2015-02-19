@@ -112,7 +112,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SRk-tu-guK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="118.39999999999999" y="935.30666666666662"/>
+            <point key="canvasLocation" x="121" y="859"/>
         </scene>
         <!--Transaction View Controller-->
         <scene sceneID="YSE-7u-2rr">
@@ -139,7 +139,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BMt-Uj-02L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="745" y="977"/>
+            <point key="canvasLocation" x="781" y="859"/>
         </scene>
         <!--Account View Controller-->
         <scene sceneID="NFd-5E-Rcd">
@@ -192,11 +192,17 @@
                                 <rect key="frame" x="87" y="247" width="207" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="nQl-78-yW7" id="UvU-No-ANn"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cdn-1v-eOq">
                                 <rect key="frame" x="87" y="306" width="207" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="nQl-78-yW7" id="xho-Fz-vEW"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -336,7 +342,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="386" y="971"/>
+            <point key="canvasLocation" x="450" y="859"/>
         </scene>
         <!--All Banks Controller-->
         <scene sceneID="edx-mU-bw4">
